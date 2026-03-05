@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function sla() {
+            lista = []
+            auxiliar = "abobrinhatumbres"
+            for (i = 0; lista.length < 6; i++) {
+                randomico = Math.round(Math.random() * (80 - 1) + 1)
+
+                if (lista.indexOf(randomico) == -1) {
+                    lista.push(randomico)
+                }
+            }
+
+            for (k = 0; k < lista.length; k++) {
+                Menor = lista[5]
+                for (j = k; j < lista.length; j++) {
+                    if (lista[j] < Menor) {
+                        Menor = lista[j]
+                    }
+
+                }
+                auxiliar = lista[k]
+                pos = lista.indexOf(Menor)
+                lista.splice(k,1,Menor)
+                lista.splice(pos,1,auxiliar)
+
+                
+
+                
+            }
+
+
+
+            abc.innerHTML = lista
+        }
+        // function sla2() {
+        //     lista = [1,2,3,4,5,6,7,8,9,0]
+        //     Menor = lista[0]
+        //     for (j = 0; j < lista.length; j++) {
+        //         if (lista[j] < Menor) {
+        //             Menor = lista[j]
+        //         }
+        //     }
+        //     console.log(Menor)
+        // }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="sla()">abc</button>
+    <p id="abc"></p>
+</body>
+
+</html>
